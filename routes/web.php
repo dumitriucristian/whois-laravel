@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', "HomepageController@index");
+Route::post('checkdomain', "HomepageController@checkDomain");
+Route::get('cart','CartController@index');
+Route::get('removeDomain/{domain}','CartController@removeDomain');
+Route::post('order', "CartControler@registerOrer");
+
